@@ -8,7 +8,7 @@ import time
 
 start_time = time.time()
 
-prefix = "a"
+prefix = "c"
 groupsurl = "http://10.0.0.5:8080/api/server_groups"
 
 def getInfo(url):
