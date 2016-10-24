@@ -1,0 +1,39 @@
+version: '2'
+services:
+  codis-test1:
+    image: zhiwu/centos:sshd
+    volumes:
+     - /data/jiangzw/docker_home/codis-test1:/home
+    network_mode: Net9588
+    hostname: cds-t1-cache01.xy.jiedaibao.com
+    ports:
+        - "8001:8080"
+
+  codis-test2:
+    image: zhiwu/centos:sshd
+    volumes:
+     - /data/jiangzw/docker_home/codis-test2:/home
+    network_mode: Net9588
+    hostname: cds-t1-cache02.xy.jiedaibao.com
+    ports:
+        - "8002:8080"
+    depends_on:
+        - codis-test1
+
+  codis-test3:
+    image: zhiwu/centos:sshd
+    volumes:
+     - /data/jiangzw/docker_home/codis-test3:/home
+    network_mode: Net9588
+    hostname: cds-t1-cache03.xy.jiedaibao.com
+    depends_on:
+        - codis-test2
+
+  codis-test4:
+    image: zhiwu/centos:sshd
+    volumes:
+     - /data/jiangzw/docker_home/codis-test4:/home
+    network_mode: Net9588
+    hostname: cds-t1-cache04.xy.jiedaibao.com
+    depends_on:
+        - codis-test3
