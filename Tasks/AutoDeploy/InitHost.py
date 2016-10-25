@@ -8,7 +8,7 @@ import commands
 def Usage():
 	print("""
 	Usage:
-		python InitHost.py ip""")
+		python InitHost.py ip1,ip2,ip3,ip4...""")
 def goon():
 	answer = raw_input("Go on ? Enter yes or no: ")
 	if answer.strip() != "yes":

@@ -4,7 +4,7 @@ import redis
 import string
 import random
 
-r = redis.StrictRedis(host='10.0.0.5', port=9100)
+r = redis.StrictRedis(host='10.0.0.8', port=9100)
 
 letter26 = []
 for letter in string.lowercase:

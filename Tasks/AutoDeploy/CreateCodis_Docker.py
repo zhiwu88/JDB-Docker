@@ -346,6 +346,7 @@ def main():
   print "--------------------------->startXyDashboard"
   startXyDashboard(xyHostList)
   print "--------------------------->initCodis"
+  time.sleep(2)
   initCodis(codisName, xyHostList[0])
   print "--------------------------->startXyProxy"
   startXyProxy(xyHostList)
