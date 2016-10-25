@@ -17,7 +17,7 @@ def killdel(IPlist):
 		print rst
 
 def deldb(IPlist):
-	conn = sqlite3.connect('ClusterManager.db')
+	conn = sqlite3.connect('DockerCodis.db')
 	for ip in IPlist:
 		print 'delete from hostinfo where ip = "' + ip +'"'
 		cursor = conn.execute('delete from hostinfo where ip = "' + ip +'"')

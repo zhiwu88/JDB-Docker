@@ -103,13 +103,13 @@ def changeHostName(ip, hostName):
 
 def rsyncXyRedis(xyHostList):
   for xyHost in xyHostList:
-    ret = commands.getoutput("rsync -avzp /data/jiangzw/codis_bin/deply_codis_xy/monitor root@%s:/home/work/opbin/" % xyHost)
+    ret = commands.getoutput("rsync -avzp deply_codis_xy/monitor root@%s:/home/work/opbin/" % xyHost)
     print ret
     ret = commands.getoutput("rsync -avzp crontab_work root@%s:/tmp" % xyHost)
     print ret
-    ret = commands.getoutput("rsync -avzp /data/jiangzw/codis_bin/deply_codis_xy/codis_6*  /data/jiangzw/codis_bin/deply_codis_xy/codis_7* root@%s:/home/work/" % xyHost)
+    ret = commands.getoutput("rsync -avzp deply_codis_xy/codis_6*  deply_codis_xy/codis_7* root@%s:/home/work/" % xyHost)
     print ret
-    ret = commands.getoutput("rsync -avzp /data/jiangzw/codis_bin/deply_codis_xy/startCodis.sh root@%s:/home/work/" % xyHost)
+    ret = commands.getoutput("rsync -avzp deply_codis_xy/startCodis.sh root@%s:/home/work/" % xyHost)
     print ret
 
 def createXyConfigini(codisName):
@@ -120,18 +120,18 @@ def createXyConfigini(codisName):
   
 def rsyncXyDashboard(xyHostList, codisName):
   for xyHost in xyHostList:
-    ret = commands.getoutput("rsync -avzp /data/jiangzw/codis_bin/deply_codis_xy/dashboard root@%s:/home/work/" % xyHost)
+    ret = commands.getoutput("rsync -avzp deply_codis_xy/dashboard root@%s:/home/work/" % xyHost)
     print ret
     ret = commands.getoutput("rsync tmp/config.ini-%s root@%s:/home/work/dashboard/conf/config.ini" % (codisName, xyHost))
     print ret
 
 def rsyncXyProxy(xyHostList, codisName):
   for xyHost in xyHostList:
-    ret = commands.getoutput("rsync -avzp /data/jiangzw/codis_bin/deply_codis_xy/proxy_9100 root@%s:/home/work/" % xyHost)
+    ret = commands.getoutput("rsync -avzp deply_codis_xy/proxy_9100 root@%s:/home/work/" % xyHost)
     print ret
     ret = commands.getoutput("rsync tmp/config.ini-%s root@%s:/home/work/proxy_9100/conf/config.ini" % (codisName, xyHost))
     print ret
-    ret = commands.getoutput("rsync -avzp /data/jiangzw/codis_bin/deply_codis_xy/proxy_9200 root@%s:/home/work/" % xyHost)
+    ret = commands.getoutput("rsync -avzp deply_codis_xy/proxy_9200 root@%s:/home/work/" % xyHost)
     print ret
     ret = commands.getoutput("rsync tmp/config.ini-%s root@%s:/home/work/proxy_9200/conf/config.ini" % (codisName, xyHost))
     print ret
@@ -149,13 +149,13 @@ def chown(hostList):
 
 def rsyncYzRedis(yzHostList):
   for yzHost in yzHostList:
-    ret = commands.getoutput("rsync -avzp /data/jiangzw/codis_bin/deply_codis_yz/monitor root@%s:/home/work/opbin/" % yzHost)
+    ret = commands.getoutput("rsync -avzp deply_codis_yz/monitor root@%s:/home/work/opbin/" % yzHost)
     print ret
     ret = commands.getoutput("rsync -avzp crontab_work root@%s:/tmp" % yzHost)
     print ret
-    ret = commands.getoutput("rsync -avzp /data/jiangzw/codis_bin/deply_codis_xy/codis_6*  /data/jiangzw/codis_bin/deply_codis_xy/codis_7* root@%s:/home/work/" % yzHost)
+    ret = commands.getoutput("rsync -avzp deply_codis_xy/codis_6*  deply_codis_xy/codis_7* root@%s:/home/work/" % yzHost)
     print ret
-    ret = commands.getoutput("rsync -avzp /data/jiangzw/codis_bin/deply_codis_yz/startCodis.sh root@%s:/home/work/" % yzHost)
+    ret = commands.getoutput("rsync -avzp deply_codis_yz/startCodis.sh root@%s:/home/work/" % yzHost)
     print ret
 
 def createYzConfigini(codisName):
@@ -166,18 +166,18 @@ def createYzConfigini(codisName):
   
 def rsyncYzDashboard(yzHostList, codisName):
   for yzHost in yzHostList:
-    ret = commands.getoutput("rsync -avzp /data/jiangzw/codis_bin/deply_codis_yz/dashboard root@%s:/home/work/" % yzHost)
+    ret = commands.getoutput("rsync -avzp deply_codis_yz/dashboard root@%s:/home/work/" % yzHost)
     print ret
     ret = commands.getoutput("rsync tmp/config.ini-%s root@%s:/home/work/dashboard/conf/config.ini" % (codisName, yzHost))
     print ret
 
 def rsyncYzProxy(yzHostList, codisName):
   for yzHost in yzHostList:
-    ret = commands.getoutput("rsync -avzp /data/jiangzw/codis_bin/deply_codis_yz/proxy_9100 root@%s:/home/work/" % yzHost)
+    ret = commands.getoutput("rsync -avzp deply_codis_yz/proxy_9100 root@%s:/home/work/" % yzHost)
     print ret
     ret = commands.getoutput("rsync tmp/config.ini-%s root@%s:/home/work/proxy_9100/conf/config.ini" % (codisName, yzHost))
     print ret
-    ret = commands.getoutput("rsync -avzp /data/jiangzw/codis_bin/deply_codis_yz/proxy_9200 root@%s:/home/work/" % yzHost)
+    ret = commands.getoutput("rsync -avzp deply_codis_yz/proxy_9200 root@%s:/home/work/" % yzHost)
     print ret
     ret = commands.getoutput("rsync tmp/config.ini-%s root@%s:/home/work/proxy_9200/conf/config.ini" % (codisName, yzHost))
     print ret
