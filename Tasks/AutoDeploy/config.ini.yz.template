@@ -4,7 +4,7 @@
 coordinator=zookeeper
 
 # Use comma "," for multiple instances. If you use etcd, you should also use this property.
-zk=10.0.0.2:2181,10.0.0.3:2181,10.0.0.4:2181
+zk=10.0.0.5:2181,10.0.0.6:2181,10.0.0.7:2181
 
 # This addr is used for codis's proxies and commands, which should be host:port, host can not be 0.0.0.0 or omited.
 # The address/port which is listened by dashborad service whose host can be omited depends on the "--addr" in its start command arguments.
@@ -37,7 +37,7 @@ session_max_pipeline=1024
 zk_session_timeout=30000
 
 ##### must be different for each proxy
-product=rrx-t1
+product=rrx-xxxx
 
 #ha
 parallelRepl=2
